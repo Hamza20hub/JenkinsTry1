@@ -11,6 +11,7 @@
 
     <artifactId>Generic</artifactId>
 
+
     <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>

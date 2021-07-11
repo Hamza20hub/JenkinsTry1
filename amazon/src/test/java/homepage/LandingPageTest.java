@@ -12,7 +12,7 @@ public class LandingPageTest extends CommonAPI {
     @Test
     public void currentUrlTest() throws InterruptedException {
         String currentUrl = driver.getCurrentUrl();
-        assertTrue(currentUrl.contains("amazon.com"));
+        assertTrue(currentUrl.contains("CNN.com"));
 
         TestLogger.log(getClass().getSimpleName() + "  " + convertToString(new Object() {
         }.getClass().getEnclosingMethod().getName()) + "-> " + "Search for " + currentUrl);

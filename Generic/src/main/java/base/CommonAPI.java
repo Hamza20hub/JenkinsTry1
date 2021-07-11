@@ -114,7 +114,7 @@ public class CommonAPI {
     @BeforeClass
     public void setUp(@Optional("false") boolean useCloudEnv, @Optional("browserstack") String cloudEnvName,
                       @Optional("OS X") String os, @Optional("10") String os_version, @Optional("chrome-options") String browserName, @Optional("30")
-                              String browserVersion, @Optional("http://www.cnn.com/") String url) throws Exception {
+                              String browserVersion, @Optional("http://www.facebook.com/") String url) throws Exception {
         if (useCloudEnv == true) {
             if (cloudEnvName.equalsIgnoreCase("browserstack")) {
                 getCloudDriver(cloudEnvName, browserstack_username, browserstack_accesskey, os, os_version, browserName, browserVersion);
@@ -529,8 +529,12 @@ public class CommonAPI {
         driver.findElement(By.cssSelector(locator)).clear();
     }
 
-    public void keysInput(String locator) {
-        driver.findElement(By.cssSelector(locator)).sendKeys(Keys.ENTER);
+    public void keysInput(String locator, String value) {
+        driver.findElement(By.xpath(locator)).sendKeys(Keys.ENTER);
+    }
+
+    public void keysInputX(String locator) {
+        driver.findElement(By.xpath(locator)).sendKeys(Keys.ENTER);
     }
 
     /**
